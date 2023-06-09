@@ -46,26 +46,24 @@ def listToString(s):
     return x
 
 if __name__ == '__main__':
-    teks = "input.txt"
-    arr_str = []
-    arr_int = []
-    data_file = open(teks, 'r')
-    teks = data_file.readline().replace("\n", "")
-    while teks != "":
-        data = teks.split()
-        teks = data_file.readline().replace("\n", "")
-        arr_str.append(data)
-        for i in arr_str :
-            for n in i :
-                arr_int.append(int(n))
-    data_file.close()
-    minimum, maximum = 0, -1
-    # array initialization
-    # arr = [6, 2, 3, 5, 1, 2]
+    # Pembacaan Input File
+    teks = "input.txt" # Nama File .txt
+    data_file = open(teks, 'r') # Open File dengan mode read 'r'
+    arr_int = [] # Inisialisasi list untuk menampung nilai-nilai integer
+    arr_str = data_file.read().split() # Inisialisasi list sementara untuk menampung string ketika membaca file
+    for i in arr_str: # Looping untuk setiap elemen di array string
+        if (i.isnumeric()): # Cek apakah elemen tersebut angka atau bukan
+            arr_int.append(int(i)) # Jika angka, maka taruh ke array of integer
+    data_file.close() # Close file kalau udah selesai
+    
+    # Jika panjang array of integer adalah 0 maka list adalah kosong
+    if len(arr_int) < 1:
+        print("Input Kosong")
+    else:
+        minimum = arr_int[0]
+        print("Pencarian menggunakan Divide & Conquer")
+        minimum = cari_nilai_minimum_DNQ(arr_int, 0, len(arr_int)-1, "  ┃ ")
+        print("  ┗The minimum number in the array is:", minimum)
 
-    print("Pencarian menggunakan Divide & Conquer")
-    minimum = cari_nilai_minimum_DNQ(arr_int, 0, len(arr_int)-1, "  ┃ ")
-    print("  ┗The minimum number in the array is:", minimum)
-
-    print("\nPencarian menggunakan Brute Force")
-    cari_nilai_minimum_bruteForce(arr_int)
+        print("\nPencarian menggunakan Brute Force")
+        cari_nilai_minimum_bruteForce(arr_int)
