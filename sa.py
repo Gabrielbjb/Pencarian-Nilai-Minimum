@@ -10,13 +10,16 @@ def cari_nilai_minimum_bruteForce(arr):
     print("Nilai minimum ada di array dengan indeks ke-" + str(min_index) + " dengan nilai: " + str(arr[min_index]))
 
 def cari_nilai_minimum_DNQ(arr, low, high, indent=""):
-    if high - low <= 1:
+    if high - low == 1:
         if arr[high] < arr[low]:
             print(indent[:len(indent)-2] + "┣━" + listToString(arr[low:high+1]), "min: " + str(arr[high]))
             return arr[high]
         else:
             print(indent[:len(indent)-2] + "┣━" + listToString(arr[low:high+1]), "min: " + str(arr[low]))
             return arr[low]
+    elif high - low == 0:
+        print(indent[:len(indent)-2] + "┣━" + listToString(arr[low:high+1]), "min: " + str(arr[low]))
+        return arr[low]
     else:
         print(indent[:len(indent)-2] + "┣━" + listToString(arr[low:high+1]))
         print(indent+ "  ┃ ")
