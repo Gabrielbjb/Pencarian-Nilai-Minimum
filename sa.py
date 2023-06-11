@@ -1,3 +1,5 @@
+import time
+
 def cari_nilai_minimum_bruteForce(arr):
     min_index = 0
     for i in range(1, len(arr)):
@@ -65,8 +67,18 @@ if __name__ == '__main__':
     else:
         minimum = arr_int[0]
         print("Pencarian menggunakan Divide & Conquer")
+        start1 = time.time()
         minimum = cari_nilai_minimum_DNQ(arr_int, 0, len(arr_int)-1, "  ┃ ")
+        end1 = time.time()
         print("  ┗The minimum number in the array is:", minimum)
+        print("Time:",(end1-start1) * 10**3, "ms")
 
         print("\nPencarian menggunakan Brute Force")
+        start2 = time.time()
         cari_nilai_minimum_bruteForce(arr_int)
+        end2 = time.time()
+        print("Time:",(end2-start2) * 10**3, "ms")
+
+
+
+
