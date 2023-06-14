@@ -2,12 +2,14 @@ import time
 
 def cari_nilai_minimum_bruteForce(arr):
     min_index = 0
+    previous_min_index = min_index
     for i in range(1, len(arr)):
         change_min_Index = False
         if arr[i] < arr[min_index]:
             change_min_Index = True
+            previous_min_index = min_index
             min_index = i
-        print("Iterasi ke-" + str(i) + ": " + "arr[" + str(i) + "] < arr[" + str(min_index) + "]: " + str(change_min_Index ) + ", Nilai minimum sekarang ada di array indeks ke-" + str(min_index))
+        print("Iterasi ke-" + str(i) + ": " + "arr[" + str(i) + "] < arr[" + str(previous_min_index) + "]: " + str(change_min_Index) + ", Nilai minimum sekarang ada di array indeks ke-" + str(min_index))
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     print("Nilai minimum ada di array dengan indeks ke-" + str(min_index) + " dengan nilai: " + str(arr[min_index]))
 
@@ -78,7 +80,3 @@ if __name__ == '__main__':
         cari_nilai_minimum_bruteForce(arr_int)
         end2 = time.time()
         print("Time:",(end2-start2) * 10**3, "ms")
-
-
-
-
