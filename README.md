@@ -9,13 +9,13 @@ Pencarian nilai minimum adalah proses mencari elemen terkecil atau nilai terenda
 5. Dan masih banyak kasus lainnya.
 
 # Pendekatan Strategi Divide & Conquer
-![Screenshot](image-2.jpg)
+![Screenshot](image2.jpg)
 Divide and Conquer adalah pendekatan yang memecah masalah menjadi submasalah yang lebih kecil, menyelesaikan setiap submasalah secara terpisah, dan kemudian menggabungkan solusi submasalah menjadi solusi akhir. Dalam konteks pencarian nilai minimum, strategi ini akan memecah array menjadi setengah dari array aslinya dan dilakukan berulang secara rekursif hingga panjang array menjadi kecil (misalnya menjadi 2), kemudian dilakukan perbandingan untuk mencari nilai minimumnya.
 
 # Pendekatan Strategi Brute Force
-![Screenshot](image-3.jpg)
+![Screenshot](image3.jpg)
 Brute Force adalah pendekatan sederhana yang mencoba semua kemungkinan solusi untuk memecahkan masalah. Dalam konteks pencarian nilai minimum, strategi Brute Force akan mencoba semua pasangan angka dalam array dan mengambil nilai minimum di antara mereka.
 
 # Pembacaan input melalui file teks
-![Screenshot](image-4.gif)
+![Screenshot](image4.gif)
 Kode program ini dapat membaca input berupa file teks sehingga hal ini memudahkan bagi para pengguna apabila memiliki ukuran array yang cukup besar.
